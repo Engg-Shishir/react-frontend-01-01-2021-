@@ -14,6 +14,7 @@ import Summary from './components/Summary/Summary';
 import RecentProject from './components/RecentProject/RecentProject';
 import Course from './components/Course/Course';
 import Video from './components/Video/Video';
+import ClientReview from './components/ClientReview/ClientReview';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <RecentProject/>
       <Course/>
       <Video/>
+      <ClientReview/>
       <Footer/>
     </Router>
   );
