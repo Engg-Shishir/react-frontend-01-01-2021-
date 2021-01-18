@@ -312,4 +312,34 @@
   border: 1px solid #0073E6;
   border-radius: 50%;
 }
+
+
+
+
+
+
+
+/* ================== OtherPage Top Banner ===================== */
+.pageFixedBaner{
+  background-image: url("../images/homeTopBanner/homeTopBanner.jpg");
+  min-height: 280px;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pageBannnerOverlay{
+  position: absolute;
+  min-height: 280px;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+}
+.pageFixedBannerContent{
+  margin-top: 8rem;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 600;
+  font-family:Verdana;
+}
   
