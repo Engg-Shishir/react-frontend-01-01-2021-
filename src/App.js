@@ -5,12 +5,12 @@ import './asset/css/custom.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './asset/css/all.min.css';
 import {BrowserRouter as Router} from 'react-router-dom';
-import Home from './pages/Home';
+import AppRoute from './router/AppRoute';
 
 function App() {
   return (
     <Router>
-      <Home/>
+     <AppRoute />
     </Router>
   );
 }
