@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import Service from '../pages/Service';
 import Contact from '../pages/Contact';
 import Course from '../pages/Course';
+import Portfolios from '../pages/Portfolio';
 
 export default class AppRoute extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class AppRoute extends Component {
           <Route exact path="/service" component={Service}/>
           <Route exact path="/contact" component={Contact}/>
           <Route exact path="/course" component={Course}/>
+          <Route exact path="/portfolio" component={Portfolios}/>
         </Switch>
       </Fragment>
     )
