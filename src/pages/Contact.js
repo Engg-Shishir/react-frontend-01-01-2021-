@@ -1,12 +1,11 @@
-import React, {Component,Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 
 import TopNavigation from '../components/TopNavigation/TopNavigation';
 import OtherPageTop from '../components/OtherPageTop/OtherPageTop';
-import Services from '../components/Services/Services';
+import ContactSection from "../components/ContactSection/ContactSection";
 import Footer from '../components/Footer/Footer';
-import ContactSection from '../components/ContactSection/ContactSection';
 
-export default class Service extends Component {
+export default class Contact extends Component {  
   
   // For Page Load in at the top
   componentDidMount(){
@@ -16,12 +15,11 @@ export default class Service extends Component {
   render() {
     return (
       <Fragment>
-        <TopNavigation title="Services"/>
-        <OtherPageTop  title="My Services"/>
-        <Services/>
+        <TopNavigation title="Contact Me"/>
+        <OtherPageTop title="Contact Me"/>
         <ContactSection/>
         <Footer/>
       </Fragment>
     )
-    }
+  }
 }
