@@ -7,6 +7,7 @@ import Contact from '../pages/Contact';
 import Course from '../pages/Course';
 import Portfolio from '../pages/Portfolio';
 import RefundPage from '../pages/RefundPage';
+import TermsPage from '../pages/TermsPage';
 
 export default class AppRoute extends Component {
   render() {
@@ -20,6 +21,7 @@ export default class AppRoute extends Component {
           <Route exact path="/course" component={Course}/>
           <Route exact path="/portfolio" component={Portfolio}/>
           <Route exact path="/refund" component={RefundPage}/>
+          <Route exact path="/terms" component={TermsPage}/>
         </Switch>
       </Fragment>
     )
