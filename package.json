@@ -20,6 +20,7 @@
     "react-visibility-sensor": "^5.1.1",
     "recharts": "^2.0.3",
     "slick-carousel": "^1.8.1",
+    "video-react": "^0.14.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

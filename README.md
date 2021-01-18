@@ -53,3 +53,10 @@ import "slick-carousel/slick/slick-theme.css";
 // Brand:
 <FontAwesomeIcon icon={["fab", "github"]} />
 ```
+
+
+
+
+
++ install video react `npm install --save video-react react react-dom`
++ import css in your app or add video-react styles in your page`import 'video-react/dist/video-react.css';`
