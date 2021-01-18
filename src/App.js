@@ -4,13 +4,14 @@ import React  from 'react';
 import './asset/css/custom.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './asset/css/all.min.css';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+import HomeTopBanner from './components/HomeTopBanner/HomeTopBanner';
 
 function App() {
   return (
-    <BrowserRouter>
-      <h1>Hello React Frontend</h1>
-    </BrowserRouter>
+    <Router>
+      <HomeTopBanner/>
+    </Router>
   );
 }
 

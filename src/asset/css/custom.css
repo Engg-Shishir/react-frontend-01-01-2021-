@@ -1,0 +1,34 @@
+/* ================== Home Top Fixed Banner Style ===================== */
+.topFixedBaner{
+  background-image: url("../images/homeTopBanner/homeTopBanner.jpg");
+  min-height: 600px;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.topBannnerOverlay{
+  position: absolute;
+  min-height: 600px;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.topContent{
+  margin-top: 10rem;
+}
+
+.topTitle{
+  font-size: 48px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.topSubTitle{
+  font-size:27px;
+  font-family: serif;
+  font-weight: 500;
+  color: #ffffff;
+}
