@@ -82,3 +82,47 @@
   font-weight: 400;
   color: #000000 !important;
 }
+
+
+
+
+
+/* ================== Footer Section ===================== */
+.footerSection{
+  margin-top: 5rem;
+  box-shadow: 0 0 4px 0 rgba(0,115,230,0.2);
+}
+.footerDiscription{
+  color: #333;
+}
+.sociaLink{
+   color: #075204;
+   text-decoration: none !important;
+   font-family:monospace;
+   font-size: 14px;
+   font-weight: 600;
+}
+.footerLink{
+  color: #313131;
+  text-decoration: none !important;
+  font-family:Geneva;
+  font-size: 14px;
+  font-weight: 400;
+}
+.copyrightSection{
+  padding: 20px;
+  background-color: rgb(81, 81, 209);
+}
+.copyrightText{
+  color: #ffffff;
+  text-decoration: none !important;
+  font-family: serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+.copyrightText:hover{
+  color: #070404;
+}
+
+
+
