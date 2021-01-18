@@ -1,3 +1,15 @@
+
+/* ================== Global Title Style ===================== */
+.Title{
+  color: #0094d8;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+
+
 /* ================== Home Top Fixed Banner Style ===================== */
 .topFixedBaner{
   background-image: url("../images/homeTopBanner/homeTopBanner.jpg");
@@ -122,6 +134,34 @@
 }
 .copyrightText:hover{
   color: #070404;
+}
+
+
+
+
+
+
+/* ================== Service Card Style ===================== */
+.serviceCard{
+  margin: 5px;
+  height: 22rem;
+  padding: 60px 30px 60px 30px;
+  box-shadow: 0 0 4px 0 rgba(0,155,230,0.2);
+}
+
+.serviceCard:hover{
+  box-shadow: 0 0 8px 0 rgba(0,155,230,0.2);
+}
+.serviceName{
+  margin-top: 1rem;
+  font-size: 22px;
+  font-weight: 600;
+}
+.serviceText{
+  margin-top: 1rem;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
 }
 
 
