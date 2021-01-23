@@ -1,16 +1,18 @@
 # React-Frontend-01-01-2021
  This react repository intigrated with repository Lumen-Api-01-01-2021
- <br> <br> <br> 
+ <br><br><br> 
 
 
 
 + install React App `npx create-react-app AppName`
 + Run app `npm start`
+<br><br> 
 
 
 
 + install react router dom `npm install react-router-dom`
 + intall bootstrap with react bootstrap `npm install bootstrap`,`npm install react-bootstrap bootstrap`
+<br><br>
 
 
 
@@ -20,7 +22,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 ```
-
+<br><br>
 
 + install react react-visibility-sensor `npm install react-visibility-sensor`
 ```javascript
@@ -30,14 +32,15 @@ import "slick-carousel/slick/slick-theme.css";
     </VisibilitySensor>
   );
 ```
+<br><br>
 
 
 + install react Recharts Chart `npm install recharts`
-
+<br><br>
 
 
 + install react react-countup animation `npm i react-countup`
-
+<br><br>
 
 
 + instal react-fontawesome `npm install --save @fortawesome/free-solid-svg-icons` , `npm install --save @fortawesome/free-brands-svg-icons`, `npm install --save @fortawesome/free-regular-svg-icons`
@@ -53,10 +56,16 @@ import "slick-carousel/slick/slick-theme.css";
 // Brand:
 <FontAwesomeIcon icon={["fab", "github"]} />
 ```
-
+<br><br>
 
 
 
 
 + install video react `npm install --save video-react react react-dom`
 + import css in your app or add video-react styles in your page`import 'video-react/dist/video-react.css';`
+<br><br>
+
+
+
++ install axios for send http request `npm install axios`
++ <br><br>
