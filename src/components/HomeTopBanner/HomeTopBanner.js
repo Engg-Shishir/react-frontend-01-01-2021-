@@ -1,21 +1,28 @@
 
 import React, { Component, Fragment} from 'react';
-import { Container, Row,Button , Col} from 'react-bootstrap';
-import axios from 'axios'; // impot axios
+import { Container, Row, Col} from 'react-bootstrap';
+import AppUrl from '../../RestApi/AppUrl';
+import RestClient from '../../RestApi/RestClient';
 
-export default class HomeTopBanner extends Component {
+class HomeTopBanner extends Component {
+
+
+  constructor(){
+    super();
+    this.state={
+      title:"",
+      subTitle:""
+    }
+  }
   
   //call componentDidMount().This meathod work when this compoent is load everytime
   componentDidMount(){
-    axios.get('http://localhost:8000/chartData')
-    .then(function(response){
-      console.log(response.data);
-    })
-    .catch(function(error){
-      console.log(error);
-    })
+    RestClient.GetRequest(AppUrl.HomeTopTitle).then(result=>{
+      this.setState({title:result[0]['homeTitle'],subTitle:result[0]['homeSubTitle']})
+    }).catch(error=>{// if something is going wrong
+      this.setState({title:"Title Is Not Found",subTitle:"Something is going wrong"})
+    });
   }
-
 
   render() {
     return (
@@ -25,8 +32,8 @@ export default class HomeTopBanner extends Component {
              <Container className="topContent">
                <Row>
                  <Col className="text-center">
-                  <h1 className="topTitle">SOFTWARE ENGINER</h1>
-                  <h4 className="topSubTitle">Mobile and web Application</h4>
+                  <h1 className="topTitle">{this.state.title}</h1>
+                  <h4 className="topSubTitle">{this.state.subTitle}</h4>
                   <button className="btn btn-outline-light">More Info</button>
                  </Col>
                </Row>
@@ -37,3 +44,5 @@ export default class HomeTopBanner extends Component {
     )
   }
 }
+
+export default HomeTopBanner;
