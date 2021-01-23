@@ -1,9 +1,22 @@
 
 import React, { Component, Fragment} from 'react';
 import { Container, Row,Button , Col} from 'react-bootstrap';
-
+import axios from 'axios'; // impot axios
 
 export default class HomeTopBanner extends Component {
+  
+  //call componentDidMount().This meathod work when this compoent is load everytime
+  componentDidMount(){
+    axios.get('http://localhost:8000/chartData')
+    .then(function(response){
+      console.log(response.data);
+    })
+    .catch(function(error){
+      console.log(error);
+    })
+  }
+
+
   render() {
     return (
       <Fragment>
