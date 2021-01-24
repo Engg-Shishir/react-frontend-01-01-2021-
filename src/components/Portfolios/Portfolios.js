@@ -1,91 +1,54 @@
 import React, {Component, Fragment} from 'react';
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
+import { Link } from 'react-router-dom';
+
+import AppUrl from '../../RestApi/AppUrl';
+import RestClient from '../../RestApi/RestClient';
 
 class AllProjects extends Component {
+        // This is a constructor
+        constructor() {
+            super();
+            this.state ={
+                myData:[]
+            }
+        }
+    
+    
+      //call componentDidMount().This meathod work when this compoent is load everytime
+      componentDidMount(){
+        RestClient.GetRequest(AppUrl.project).then(result=>{
+          this.setState({myData:result})
+        });
+      }
+
     render() {
+
+    //access course data in myList which is an array
+    const myList = this.state.myData;
+    
+    // create a dynamic card
+    const myView = myList.map(myList=>{
+      return <Col sm={12} md={6} lg={4}>
+        <Card style={{ width: '18rem' }}>
+            <Card.Img height="250px" width="250px" variant="top" src={myList.imageOne} />
+            <Card.Body>
+                <Card.Title>{myList.projectName}</Card.Title>
+                <Card.Text>
+                  {myList.projectDes}
+                </Card.Text>
+                
+                <Link to="/projectdetails"><Button variant="primary">Details</Button></Link>
+            </Card.Body>
+        </Card>
+      </Col>
+    })
         return (
             <Fragment>
                 <Container className="text-center mt-5">
-                    <Row>
-                        <Col sm={12} md={6} lg={4} className="p-2">
-                            <Card className="projectCard">
-                                <Card.Img variant="top" src="http://rabbil.com/ControlPanel/Images/foolbazz.png" />
-                                <Card.Body>
-                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
-                                    <Card.Text className="projectCardDes">
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Details</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col sm={12} md={6} lg={4} className="p-2">
-                            <Card className="projectCard">
-                                <Card.Img variant="top" src="http://rabbil.com/ControlPanel/Images/foolbazz.png" />
-                                <Card.Body>
-                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
-                                    <Card.Text className="projectCardDes">
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Details</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col sm={12} md={6} lg={4} className="p-2">
-                            <Card className="projectCard">
-                                <Card.Img variant="top" src="http://rabbil.com/ControlPanel/Images/foolbazz.png" />
-                                <Card.Body>
-                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
-                                    <Card.Text className="projectCardDes">
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Details</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col sm={12} md={6} lg={4} className="p-2">
-                            <Card className="projectCard">
-                                <Card.Img variant="top" src="http://rabbil.com/ControlPanel/Images/foolbazz.png" />
-                                <Card.Body>
-                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
-                                    <Card.Text className="projectCardDes">
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Details</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col sm={12} md={6} lg={4} className="p-2">
-                            <Card className="projectCard">
-                                <Card.Img variant="top" src="http://rabbil.com/ControlPanel/Images/foolbazz.png" />
-                                <Card.Body>
-                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
-                                    <Card.Text className="projectCardDes">
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Details</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col sm={12} md={6} lg={4} className="p-2">
-                            <Card className="projectCard">
-                                <Card.Img variant="top" src="http://rabbil.com/ControlPanel/Images/foolbazz.png" />
-                                <Card.Body>
-                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
-                                    <Card.Text className="projectCardDes">
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">Details</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
+                   <Row>
+                      {myView} 
+                   </Row>
                 </Container>
             </Fragment>
         );
