@@ -7,6 +7,7 @@ class AppUrl{
   static project = this.baseUrl+'/project';
   static projectHome = this.baseUrl+'/projectHome';
   static service = this.baseUrl+'/service';
+  static serviceHome = this.baseUrl+'/serviceHome';
   static information = this.baseUrl+'/information';
   static footer = this.baseUrl+'/footer';
   static course = this.baseUrl+'/course';

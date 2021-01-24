@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import AppUrl from '../../RestApi/AppUrl';
 import RestClient from '../../RestApi/RestClient';
 
-export default class Services extends Component {
+export default class AllServices extends Component {
 
   // This is a constructor
   constructor() {
@@ -17,7 +17,7 @@ export default class Services extends Component {
 
     //call componentDidMount().This meathod work when this compoent is load everytime
     componentDidMount(){
-      RestClient.GetRequest(AppUrl.serviceHome).then(result=>{
+      RestClient.GetRequest(AppUrl.service).then(result=>{
         this.setState({myData:result})
       });
     }
@@ -31,7 +31,7 @@ export default class Services extends Component {
         const myView = myList.map(myList=>{
           return <Col lg={4} md={6} sm={12}>
               <div className="serviceCard text-center">
-                <img src={myList.serviceLogo}  height="100px" width="100px" alt="Alt.jpg"/>
+                <img src={myList.serviceLogo}   height="100px" width="100px" alt="Alt.jpg"/>
                 <h2 className="serviceName">Web Development</h2>
                 <p className='serviceText'>Note that the development build is not optimized.Note that the development build is not optimized.</p>
               </div>

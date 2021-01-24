@@ -2,7 +2,7 @@ import React, {Component,Fragment} from 'react';
 
 import TopNavigation from '../components/TopNavigation/TopNavigation';
 import OtherPageTop from '../components/OtherPageTop/OtherPageTop';
-import Services from '../components/Services/Services';
+import AllServices from '../components/AllServices/AllServices';
 import Footer from '../components/Footer/Footer';
 import ContactSection from '../components/ContactSection/ContactSection';
 
@@ -18,7 +18,7 @@ export default class Service extends Component {
       <Fragment>
         <TopNavigation title="Services"/>
         <OtherPageTop  title="My Services"/>
-        <Services/>
+        <AllServices/>
         <ContactSection/>
         <Footer/>
       </Fragment>
