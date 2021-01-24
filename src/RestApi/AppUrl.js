@@ -1,6 +1,6 @@
 class AppUrl{
   static baseUrl = 'http://127.0.0.1:8000';
-  static HomeTopTitle = this.baseUrl+'/HomeTopTitle000';
+  static HomeTopTitle = this.baseUrl+'/HomeTopTitle';
   static tecDes = this.baseUrl+'/tecDes';
   static total = this.baseUrl+'/total';
   static video = this.baseUrl+'/video';
