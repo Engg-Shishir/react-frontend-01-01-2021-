@@ -69,3 +69,9 @@ import "slick-carousel/slick/slick-theme.css";
 
 + install axios for send http request `npm install axios`
 + <br><br>
+
+
++ install react-html-parser `react-html-parser`
+```javascript
+```
++ <br><br>

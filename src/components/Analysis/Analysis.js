@@ -4,24 +4,31 @@ import { Col, Container, Row } from 'react-bootstrap'
 // import Recharts Plugging
 import {BarChart, Bar, XAxis,Tooltip,ResponsiveContainer,
 } from 'recharts';
+import ReactHtmlParser from 'react-html-parser';
+
+
+
+import AppUrl from '../../RestApi/AppUrl';
+import RestClient from '../../RestApi/RestClient';
 
 export default class Analysis extends Component {
   constructor(){
     super();
     this.state={
-      data:[
-        //Data set according to chart X & Y axis
-        { Tecnology:'Java',Projects:100 },
-        { Tecnology:'Kotlin',Projects:50 },
-        { Tecnology:'C++',Projects:70 },
-        { Tecnology:'Bootstrap',Projects:90 },
-        { Tecnology:'JS',Projects:70 },
-        { Tecnology:'Jquery',Projects:70 },
-        { Tecnology:'React',Projects:75 },
-        { Tecnology:'Php',Projects:70 },
-      ]
+      data:[],
+      description:"..."
     }
   }
+
+    //call componentDidMount().This meathod work when this compoent is load everytime
+    componentDidMount(){
+      RestClient.GetRequest(AppUrl.chartData).then(result=>{
+        this.setState({data:result})
+      });
+      RestClient.GetRequest(AppUrl.tecDes).then(result=>{
+        this.setState({description:result[0]['tecDes']})
+      });
+    }
   render() {
     //Chart fill color
     var barColor = "rgba(0,115,230,0.8)";
@@ -40,9 +47,7 @@ export default class Analysis extends Component {
               </ResponsiveContainer>
             </Col>
             <Col lg={6} sm={12}>
-              <p className="text-justify tecnologyDescription">A callback fired when a descendant of a child  is selected. Should be used to execute complex closing or other miscellaneous actions desired after selecting a descendant of . Does nothing if no or descendants exist. The callback is called with an eventKey, which is a prop from the selected  descendant, and an eventA callback fired when a descendant of a child  is selected. Should be used to execute complex closing or other miscellaneous actions desired after selecting a descendant of </p>
-              <p className="text-justify tecnologyDescription mt-1">
-               Does nothing if no or descendants exist. The callback is called with an eventKey, which is a prop from the selected  descendant, and an eventA callback fired when a descendant of a child  is selected. Should be used to execute complex closing or other miscellaneous actions desired after selecting a descendant of . Does nothing if no or descendants exist. The callback is called with an eventKey, which is a prop from the selected  descendant, and an event</p>
+              <p className="text-justify tecnologyDescription">{ ReactHtmlParser(this.state.description) }</p>
             </Col>
           </Row>
         </Container>
