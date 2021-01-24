@@ -15,6 +15,8 @@ class AppUrl{
   static contact = this.baseUrl+'/contact';
   static clientReview = this.baseUrl+'/clientReview';
   static chartData = this.baseUrl+'/chartData';
+  
+  static Information = this.baseUrl+'/information';
 }
 
 export default AppUrl;
