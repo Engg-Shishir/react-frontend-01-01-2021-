@@ -2,7 +2,42 @@ import React, { Component, Fragment } from 'react'
 import { Container,Row,Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
+//import react-html-parser
+import ReactHtmlParser from 'react-html-parser';
+
+import AppUrl from '../../RestApi/AppUrl';
+import RestClient from '../../RestApi/RestClient';
+
+
 export default class Footer extends Component {
+
+  constructor(){
+    super();
+    this.state={
+      address:"",
+      email:"",
+      phone:"",
+      facebook:"",
+      youtube:"",
+      footerCreadit:""
+    }
+  }
+
+  //call componentDidMount().This meathod work when this compoent is load everytime
+  componentDidMount(){
+    RestClient.GetRequest(AppUrl.footer).then(result=>{
+        this.setState({
+        address:result[0]['address'],
+        email:result[0]['email'],
+        phone:result[0]['phone'],
+        facebook:result[0]['facebook'],
+        youtube:result[0]['youtube'],
+        footerCreadit:result[0]['footerCreadit'],
+      })
+    });
+  }
+
+
   render() {
     return (
       <Fragment>
@@ -15,9 +50,9 @@ export default class Footer extends Component {
           </Col>
           <Col lg={3} md={6} sm={12} className="p-5 text-justify">
             <h4 className="footerTitle">Address</h4>
-            <p className="footerDiscription"> <i className="fas fa-address-card"></i> #79/6 Padma Residential Aria, 3rd Floor Front Side, Rajshahi</p>
-            <span  className="footerDiscription"> <i className="fas fa-envelope"></i> shishir@gmail.com</span>
-            <p  className="footerDiscription"> <i className="fas fa-phone"></i> 01703353056</p>
+            <p className="footerDiscription"> <i className="fas fa-address-card"></i> {this.state.address}</p>
+            <span  className="footerDiscription"> <i className="fas fa-envelope"></i> {this.state.email}</span>
+            <p  className="footerDiscription"> <i className="fas fa-phone"></i>{this.state.phone}</p>
           </Col>
           <Col lg={3} md={6} sm={12} className="p-5 text-justify">
             <h4 className="footerTitle">Information</h4>
@@ -34,7 +69,7 @@ export default class Footer extends Component {
           </Row>
         </Container>
         <Container fluid={true} className="text-center copyrightSection">
-          <a href="" className="copyrightText">&copy; All right resarved by Shishir - 2021</a>
+          <a href="" className="copyrightText">{this.state.footerCreadit}</a>
         </Container>
       </Fragment>
     )

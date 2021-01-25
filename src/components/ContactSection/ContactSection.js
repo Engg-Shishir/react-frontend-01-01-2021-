@@ -1,7 +1,33 @@
 import React, {Component,Fragment} from 'react';
 import {Button, Col, Container, Form, Row} from "react-bootstrap";
 
-class ContactSection extends Component {
+
+import AppUrl from '../../RestApi/AppUrl';
+import RestClient from '../../RestApi/RestClient';
+
+
+class ContactSection extends Component {  
+  constructor(){
+    super();
+    this.state={
+      address:"",
+      email:"",
+      phone:""
+    }
+  }
+
+    //call componentDidMount().This meathod work when this compoent is load everytime
+    componentDidMount(){
+        RestClient.GetRequest(AppUrl.footer).then(result=>{
+            this.setState({
+            address:result[0]['address'],
+            email:result[0]['email'],
+            phone:result[0]['phone']
+          })
+        });
+      }
+
+
     render() {
         return (
             <Fragment>
@@ -37,9 +63,9 @@ class ContactSection extends Component {
 
                         <Col lg={6} md={6} sm={12}>
                             <h1 className="serviceName">Discuss Now</h1>
-                            <p className="serviceDescription" >#79/6 Padma Residential Aria, 3rd Floor Front Side, Rajshahi</p>
-                            <p className="serviceDescription" > <i className="fas fa-envelope"></i> Engr.Rabbil@yahoo.com</p>
-                            <p className="serviceDescription" > <i className="fas fa-phone"></i> +8801701063280</p>
+                            <p className="serviceDescription" >{this.state.address}</p>
+                            <p className="serviceDescription" > <i className="fas fa-envelope"></i>{this.state.email}</p>
+                            <p className="serviceDescription" > <i className="fas fa-phone"></i> +88{this.state.phone}</p>
                         </Col>
                     </Row>
                 </Container>
