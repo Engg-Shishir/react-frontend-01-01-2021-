@@ -6,6 +6,14 @@ import ProjectDetails from "../components/ProjectDetails/ProjectDetails";
 import Footer from '../components/Footer/Footer';
 
 class ProjectDetailsPage extends Component {
+
+    constructor({match}){
+       super();
+       this.state={
+           projectId:match.params.id,
+           projectName:match.params.name
+       }
+    }
   
     // For Page Load in at the top
     componentDidMount(){
@@ -16,8 +24,8 @@ class ProjectDetailsPage extends Component {
         return (
             <Fragment>
                 <TopNavigation title="Project Details"/>
-                <OtherPageTop title="Project Name"/>
-                <ProjectDetails/>
+                <OtherPageTop title={this.state.projectName}/>
+                <ProjectDetails id={this.state.projectId}/>
                 <Footer/>
             </Fragment>
         );
