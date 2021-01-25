@@ -345,6 +345,43 @@
 
 
 
+.courseDetailsFixedBanner{
+  background-image: url("../images/homeTopBanner/homeTopBanner.jpg");
+  min-height: 300px;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 !important;
+}
+
+.courseDetailsFixedBannerOverlay{
+  position: absolute;
+  min-height: 300px;
+  width: 100%;
+  margin: 0;
+  background: rgba(0,0,0,0.7);
+}
+.courseTopContent{
+  margin-top: 5.5rem;
+  color: #ffffff;
+  font-family:Verdana;
+}
+.CourseFullTitle{
+  color: white;
+  font-family: Raleway;
+  font-size: 28px;
+  font-weight: 600;
+}
+.CourseSubTitle{
+   color: white;
+   font-family: Raleway;
+   font-size: 16px;
+   font-weight: 400;
+}
+
+
+
 
 /* ================== Contact Section ===================== */
 .form-control:focus{

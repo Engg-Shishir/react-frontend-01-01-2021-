@@ -5,9 +5,9 @@ class CourseDetails extends Component {
     render() {
         return (
             <Fragment>
-                <Container fluid={true} className="topFixedPage p-0" >
-                    <div className="topPageOverlay">
-                        <Container className="topPageContentCourse">
+                <Container fluid={true} className="courseDetailsFixedBanner p-0" >
+                    <div className="courseDetailsFixedBannerOverlay">
+                        <Container className="courseTopContent">
                             <Row>
                                 <Col sm={12} md={6} lg={6}>
                                     <h3 className="CourseFullTitle">Full Dynamic Website With Admin Panel</h3>
